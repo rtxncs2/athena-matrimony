@@ -31,6 +31,7 @@
   .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
   .stat { text-align: center; }
   .stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); font-weight: 700; }
+  .stat-num .percent { font-size: 1.2rem; font-weight: 600; vertical-align: baseline; }
   .stat-lbl { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
 
   .main-wrap { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; }
@@ -106,7 +107,7 @@
       <div class="stat"><div class="stat-num" id="total-count">0</div><div class="stat-lbl">Profiles</div></div>
       <div class="stat"><div class="stat-num">12</div><div class="stat-lbl">States</div></div>
       <div class="stat"><div class="stat-num">8</div><div class="stat-lbl">Religions</div></div>
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Verified</div></div>
+      <div class="stat"><div class="stat-num">100<span class="percent">%</span></div><div class="stat-lbl">Verified</div></div>
     </div>
   </div>
 
