@@ -67,8 +67,6 @@
   .card-actions { display: flex; gap: 0.4rem; align-items: center; }
   
   .view-btn { background: var(--crimson); color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 0.75rem; cursor: pointer; }
-  .email-card-btn { background: #1a73e8; color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 0.75rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: background 0.2s; }
-  .email-card-btn:hover { background: #1557b0; }
 
   .modal-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.55); backdrop-filter: blur(3px); align-items: center; justify-content: center; padding: 1rem; }
   .modal-overlay.open { display: flex; }
@@ -259,7 +257,6 @@ function renderGrid(list) {
     return;
   }
   grid.innerHTML = list.map(p => {
-    const subject = encodeURIComponent(`Interest in BandhanSetu Profile (${p.id})`);
     return `
     <div class="profile-card" onclick="openModal('${p.id}')">
       <div class="card-avatar">${p.emoji || '👤'}<div class="card-badge">${p.residentialStatus === 'NRI' ? 'NRI' : 'Verified'}</div></div>
@@ -270,7 +267,6 @@ function renderGrid(list) {
         <div class="card-footer">
           <span class="card-loc">📍 ${p.city}, ${p.state}</span>
           <div class="card-actions">
-            <a href="mailto:${p.email}?subject=${subject}" class="email-card-btn" onclick="event.stopPropagation();" title="Email ${p.name}">✉️ Email</a>
             <button class="view-btn">View</button>
           </div>
         </div>
